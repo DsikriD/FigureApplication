@@ -13,7 +13,6 @@ namespace FigureApplication
         }
 
 
-
         [Benchmark(Description = "Circle")]
         public void TestCircle()
         {
@@ -23,7 +22,7 @@ namespace FigureApplication
         [Benchmark(Description = "Trigular")]
         public void TestTrigulare()
         {
-            Triangle Triangle = new Triangle(5,3 ,4);
+            Triangle Triangle = new Triangle(5,3,4);
             Console.WriteLine(Triangle.IsRectangular);
         }
 
