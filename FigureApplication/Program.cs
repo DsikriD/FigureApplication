@@ -24,7 +24,7 @@ namespace FigureApplication
         public void TestTrigulare()
         {
             Triangle Triangle = new Triangle(5,3 ,4);
-            Console.WriteLine(Triangle.getRectangular());
+            Console.WriteLine(Triangle.IsRectangular);
         }
 
 

@@ -10,17 +10,9 @@ namespace FigureApplication
     {
         private double Radius;
 
-        public Circle(double Radius)
+        public Circle(double Radius) : base(Radius>0? Math.PI * Math.Pow(Radius, 2):0)
         {
-            try
-            {
-                if (Radius <= 0)
-                    throw new ArgumentOutOfRangeException(nameof(Radius), " must be positive ");
-                area = Math.PI * Math.Pow(Radius, 2);
-            }
-            catch(Exception ex) {
-                Console.WriteLine(ex.Message);
-            }  
+            
         }
 
         public double getArea() => area;

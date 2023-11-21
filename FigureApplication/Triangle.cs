@@ -10,17 +10,18 @@ namespace FigureApplication
 {
     public class Triangle : Figure
     {
-        public bool IsRectangular { get; }
+        public bool IsRectangular { get;}
 
-        public Triangle(double a, double b, double c) 
+        public Triangle(double a, double b, double c) : base ( 
+            ((a <= 0 || b <= 0 || c <= 0)&& (a + b < c || b + c < a || a + c < b)) ? 0 : Math.Sqrt((a + b + c)/2 * ((a + b + c)/2 - a) * ((a + b + c) / 2 - b) * ((a + b + c) / 2 - c)))
         {
             try
             {
-                if (a <= 0 || b <= 0 || c <= 0)
-                    throw new ArgumentOutOfRangeException("Sides must be positive.");
-                else if (a + b < c || b + c < a || a + c < b)
-                    throw new ArgumentException("Sides do not form a triangle");
-                area = Math.Sqrt((a + b + c) * (a + b + c - a) * (a + b + c - b) * (a + b + c - c));
+                //if (a <= 0 || b <= 0 || c <= 0)
+                //    throw new ArgumentOutOfRangeException("Sides must be positive.");
+                //else if (a + b < c || b + c < a || a + c < b)
+                //    throw new ArgumentException("Sides do not form a triangle");
+                //area = Math.Sqrt((a + b + c) * (a + b + c - a) * (a + b + c - b) * (a + b + c - c));
 
                 IsRectangular = (a==Math.Sqrt(Math.Pow(b,2)+Math.Pow(c,2))) 
                     || (b == Math.Sqrt(Math.Pow(a, 2) + Math.Pow(c, 2))) ||
@@ -32,7 +33,7 @@ namespace FigureApplication
             }   
         }
 
-        public bool getRectangular()
+        public bool  getRectangular()
         {
             return IsRectangular;
         }
